@@ -1,0 +1,23 @@
+<div class="mx-auto col-sm-5 pt-3 p-3">
+<h1 class="text-center pb-3"><%= @movie.name %></h1>
+
+<% if @movie.movie_poster.attached? %>
+<p>
+<%= image_tag @movie.movie_poster, class: "img-fluid img-thumbnail rounded mx-auto d-block" %>
+</p>
+<% end %>
+
+<p><%= @movie.preview %></p>
+
+<div class="text-center">
+    <%= link_to "Back To Movie List", movies_path, class: "btn btn-secondary m-2" %>
+  <% if current_user %>
+    <%= link_to "Edit", edit_movie_path(@movie), class: "btn btn-success"  %>
+    <%= link_to "Destroy", movie_path(@movie), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                    }, class: "btn btn-danger"  %>
+  <% end %>
+  </div>
+
+</div>

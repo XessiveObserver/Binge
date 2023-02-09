@@ -1,0 +1,29 @@
+<div class="mx-auto col-sm-4 pt-3 p-3">
+  <%= bootstrap_form_for(@movie) do |form| %>
+    <div>
+      <%= form.text_field :name %>
+      <% @movie.errors.full_messages_for(:name).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.file_field :movie_poster %>
+      <% @movie.errors.full_messages_for(:poster).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.text_area :preview, rows: 8 %><br>
+      <% @movie.errors.full_messages_for(:preview).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= form.submit %>
+      <%= link_to "Back To Movie List", movies_path, class: "btn btn-info m-2" %>
+    </div>
+  <% end %>
+</div>
