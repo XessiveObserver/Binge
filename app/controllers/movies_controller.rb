@@ -15,7 +15,7 @@ class MoviesController < ApplicationController
     @movie = current_user.movies.build(movie_params)
 
     if @movie.save
-      redirect_to @movie
+      redirect_to @movie, notice: "Movie was sucessfully created"
     else
       render :new, status: :unprocessable_entity
     end
@@ -29,7 +29,7 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
 
     if @movie.update(movie_params)
-      redirect_to @movie
+      redirect_to @movie, notice: "Movie was sucessfully updated"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -39,7 +39,7 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params[:id])
     @movie.destroy
 
-    redirect_to movies_path, status: :see_other
+    redirect_to movies_path, notice: "Movie was sucessfully deleted", status: :see_other
   end
 
   private

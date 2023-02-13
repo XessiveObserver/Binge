@@ -1,5 +1,5 @@
 <div class="mx-auto col-sm-5 pt-3 p-3">
-<h1 class="text-center pb-3"><%= @movie.name %></h1>
+<h1 class="text-center pb-3 shadow"><%= @movie.name %></h1>
 
 <% if @movie.movie_poster.attached? %>
 <p>
@@ -7,7 +7,7 @@
 </p>
 <% end %>
 
-<p><%= @movie.preview %></p>
+<p class="shadow-none bg-light rounded p-3"><%= @movie.preview %></p>
 
 <div class="text-center">
     <%= link_to "Back To Movie List", movies_path, class: "btn btn-secondary m-2" %>
@@ -18,6 +18,16 @@
                       turbo_confirm: "Are you sure?"
                     }, class: "btn btn-danger"  %>
   <% end %>
+  </div>
+<hr />
+  <div>
+    <h3 class="text-primary fw-bold shadow p-2">Comments</h3>
+    <%= render @movie.comments %>
+  </div>
+<hr />
+  <div>
+    <h3 class="text-primary fw-bold shadow p-3">Add a comment:</h3>
+    <%= render 'comments/form' %>
   </div>
 
 </div>

@@ -1,4 +1,4 @@
-<div class="mx-auto col-sm-4 pt-3 p-3">
+<div class="mx-auto col-sm-4 pt-3 p-3 shadow-lg rounded">
   <%= bootstrap_form_for(@movie) do |form| %>
     <div>
       <%= form.text_field :name %>
@@ -23,7 +23,7 @@
 
     <div>
       <%= form.submit %>
-      <%= link_to "Back To Movie List", movies_path, class: "btn btn-info m-2" %>
+      <%= link_to "Back To Movie List", movies_path, class: "btn btn-primary m-2" %>
     </div>
   <% end %>
 </div>

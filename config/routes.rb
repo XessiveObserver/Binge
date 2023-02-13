@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get 'binge_static_pages/about'
   get 'binge_static_pages/contact'
 
-  resources :movies
+  resources :movies do
+    resources :comments
+  end
 
   
   root "binge_static_pages#index"
