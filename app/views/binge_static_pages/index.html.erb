@@ -1,2 +1,25 @@
-<h1>BingeStaticPages#index</h1>
-<p>Find me in app/views/binge_static_pages/index.html.erb</p>
+<div class="container col-sm-6 text-center text-primary rounded mt-3 pt-5 bg-light">
+  <h1 class="display-4 fw-bolder  text-shadow text-dark ">Publish Your Binge List Easily</h1>
+  <p class="lead fw-semibold">Having a hard time publishing that finished binge? ...we got you!</p>
+   
+</div>
+
+
+
+<div class="container mx-auto col-sm-6 p-3 pt-3 bg-light m-3">
+  <h1 class="text-center text-dark shadow-lg p-5 rounded">Binge-Watched!</h1>
+  <hr class="font-weight-bold text-secondary" />
+        <% @movies.each do |movie| %>      
+          <p class="mx-auto py-1 shadow-lg py-2 rounded text-center">
+            <%= link_to movie.name, movie, class: "fw-semibold text-dark" %>
+          </p>               
+        <% end %>
+    
+        <div class="text-center">
+          <% if current_user %>
+            <%= link_to "New Movie", new_movie_path, class: "btn btn-secondary" %>
+          <% end %>
+        </div>      
+</div>
+
+

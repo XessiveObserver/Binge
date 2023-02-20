@@ -1,10 +1,5 @@
 class BingeStaticPagesController < ApplicationController
   def index
-  end
-
-  def about
-  end
-
-  def contact
+    @movies = Movie.all
   end
 end

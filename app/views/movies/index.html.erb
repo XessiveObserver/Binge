@@ -1,12 +1,12 @@
 <div class="container mx-auto col-sm-6 p-3 pt-3 bg-light m-3">
-  <h1 class="text-center text-dark shadow-lg p-5 rounded">Binged!</h1>
+  <h1 class="text-center text-dark shadow-lg p-5 rounded">Binge-Watched List!</h1>
   <hr class="font-weight-bold text-secondary" />
 
  
     <% @movies.each do |movie| %>
       <% if movie.user == current_user || !current_user %>
-        <p class="py-1 shadow-lg px-2 rounded">
-          <%= link_to movie.name, movie, class: " fw-semibold text-dark" %>
+        <p class="py-1 shadow-lg py-2 rounded text-center">
+          <%= link_to movie.name, movie, class: "fw-semibold text-dark" %>
         </p>
       <% end %>
     <% end %>
